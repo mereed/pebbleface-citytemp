@@ -1,0 +1,199 @@
+{
+    "appKeys": {
+        "hidetemp": 2,
+        "icon": 0,
+        "temperature": 1
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "chops",
+    "longName": "citytemp",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/icon_nobluetooth(1).png",
+                "name": "IMAGE_DISCONNECT",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-rain.png",
+                "name": "RAIN",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-partlycloudynight.png",
+                "name": "PARTLY_CLOUDY_NIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-clearday.png",
+                "name": "CLEAR_DAY",
+                "type": "png"
+            },
+            {
+                "file": "images/city menu bw.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-yahoo.png",
+                "name": "NA",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-fog.png",
+                "name": "FOG",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-storm.png",
+                "name": "STORM",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-cloudy.png",
+                "name": "CLOUDY",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-hail.png",
+                "name": "HAIL",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-snow.png",
+                "name": "SNOW",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-Cloud.png",
+                "name": "CLOUD",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-haze.png",
+                "name": "HAZE",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-cold.png",
+                "name": "COLD",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-windy.png",
+                "name": "WINDY",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-partlycloudyday.png",
+                "name": "PARTLY_CLOUDY_DAY",
+                "type": "png"
+            },
+            {
+                "file": "images/textimg-clearnight.png",
+                "name": "CLEAR_NIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/battsq70-168.png",
+                "name": "IMAGE_BATT_70",
+                "type": "png"
+            },
+            {
+                "file": "images/battsq50-168.png",
+                "name": "IMAGE_BATT_50",
+                "type": "png"
+            },
+            {
+                "file": "images/battsq30-168.png",
+                "name": "IMAGE_BATT_30",
+                "type": "png"
+            },
+            {
+                "file": "images/battsq10-168.png",
+                "name": "IMAGE_BATT_10",
+                "type": "png"
+            },
+            {
+                "file": "images/battsq90-168.png",
+                "name": "IMAGE_BATT_90",
+                "type": "png"
+            },
+            {
+                "file": "fonts/Roboto-Light.ttf",
+                "name": "FONT_CUSTOM_18",
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9: ]",
+                "compatibility": "2.7",
+                "file": "fonts/Roboto-Light.ttf",
+                "name": "FONT_CUSTOM_38",
+                "type": "font"
+            },
+            {
+                "compatibility": "2.7",
+                "file": "fonts/Roboto-Light.ttf",
+                "name": "FONT_CUSTOM_14",
+                "type": "font"
+            },
+            {
+                "compatibility": "2.7",
+                "file": "fonts/Roboto-Light.ttf",
+                "name": "FONT_CUSTOM_44",
+                "trackingAdjust": -1,
+                "type": "font"
+            },
+            {
+                "file": "images/BATT-100.png",
+                "name": "IMAGE_BATT_100",
+                "type": "png"
+            },
+            {
+                "file": "images/BATT-80.png",
+                "name": "IMAGE_BATT_80",
+                "type": "png"
+            },
+            {
+                "file": "images/BATT-60.png",
+                "name": "IMAGE_BATT_60",
+                "type": "png"
+            },
+            {
+                "file": "images/BATT-40.png",
+                "name": "IMAGE_BATT_40",
+                "type": "png"
+            },
+            {
+                "file": "images/BATT-20.png",
+                "name": "IMAGE_BATT_20",
+                "type": "png"
+            },
+            {
+                "file": "images/icon_battery_charge2.png",
+                "name": "IMAGE_BATT_CHARGING",
+                "type": "png"
+            },
+            {
+                "file": "images/icon_bluetooth.png",
+                "name": "IMAGE_CONNECT",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "citytemp",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "6f2f9908-6a72-4f68-8b28-dda90b4a0556",
+    "versionLabel": "2.3",
+    "watchapp": {
+        "watchface": true
+    }
+}
