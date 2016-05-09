@@ -70,7 +70,8 @@ var options = JSON.parse(localStorage.getItem('options'));
 if (options === null) options = { "use_gps" : "true",
                                   "location" : "",
                                   "units" : "fahrenheit",
-                                  "hidetemp" : ""};
+                                  "hidetemp" : "",
+								 "cityimage" : ""};
 
 function getWeatherFromLatLong(latitude, longitude) {
   var response;
@@ -95,6 +96,28 @@ function getWeatherFromLatLong(latitude, longitude) {
   req.send(null);
 }
 
+function getWeatherFromLatLong(latitude, longitude) {
+  var response;
+  var location_name = "";
+  var url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude;
+  var req = new XMLHttpRequest();
+  req.open('GET', url, true);
+  req.onload = function(e) {
+    if (req.readyState == 4) {
+      if (req.status == 200) {
+        response = JSON.parse(req.responseText);
+        if (response) {
+          location_name = response.results[0].formatted_address
+          getWeatherFromLocation(location_name);
+        }
+      } else {
+        console.log("Error LatLong");
+      }
+    }
+  }
+  req.send(null);
+}
+
 function getWeatherFromLocation(location_name) {
   var response;
   var woeid = -1;
@@ -113,12 +136,13 @@ function getWeatherFromLocation(location_name) {
           getWeatherFromWoeid(woeid);
         }
       } else {
-        console.log("Error");
+        console.log("Error Location");
       }
     }
   }
   req.send(null);
 }
+
 
 function getWeatherFromWoeid(woeid) {
   var celsius = options['units'] == 'celsius';
@@ -144,6 +168,7 @@ function getWeatherFromWoeid(woeid) {
             "icon" : icon,
             "temperature" : temperature,
             "hidetemp" : options["hidetemp"],
+            "cityimage" : options["cityimage"]
           });
         }
       } else {
@@ -180,11 +205,12 @@ function locationError(err) {
 }
 
 Pebble.addEventListener('showConfiguration', function(e) {
-  var uri = 'http://www.themapman.com/pebblewatch/city_temp1.html?' +
+	var uri = 'http://www.themapman.com/pebblewatch/city_temp3.html?' +
     'use_gps=' + encodeURIComponent(options['use_gps']) +
     '&location=' + encodeURIComponent(options['location']) +
     '&units=' + encodeURIComponent(options['units']) +
-    '&hidetemp=' + encodeURIComponent(options['hidetemp']);
+    '&hidetemp=' + encodeURIComponent(options['hidetemp']) +
+    '&cityimage=' + encodeURIComponent(options['cityimage']);
   //console.log('showing configuration at uri: ' + uri);
 
   Pebble.openURL(uri);
