@@ -92,7 +92,7 @@ function getWeatherFromLatLong(latitude, longitude) {
         console.log("Error");
       }
     }
-  }
+  };
   req.send(null);
 }
 
@@ -114,7 +114,7 @@ function getWeatherFromLatLong(latitude, longitude) {
         console.log("Error LatLong");
       }
     }
-  }
+  };
   req.send(null);
 }
 
@@ -139,7 +139,7 @@ function getWeatherFromLocation(location_name) {
         console.log("Error Location");
       }
     }
-  }
+  };
   req.send(null);
 }
 
@@ -175,7 +175,7 @@ function getWeatherFromWoeid(woeid) {
         console.log("Error");
       }
     }
-  }
+  };
   req.send(null);
 }
 

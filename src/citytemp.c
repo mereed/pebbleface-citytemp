@@ -72,7 +72,6 @@ int charge_percent = 0;
 
 Layer* weather_holder;
 Layer* weather_holder2;
-Layer *date_holder;
 
 BitmapLayer *icon_layer;
 GBitmap *icon_bitmap = NULL;
@@ -152,75 +151,85 @@ void skyline_image() {
 			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_BRISBANE);
 			break;
 		case 7:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_DELHI);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_CHICAGO);
 			break;
 		case 8:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_DUBAI);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_DELHI);
 			break;
 		case 9:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_DUBLIN);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_DUBAI);
 			break;
 		case 10:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_HONGKONG);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_DUBLIN);
 			break;
 		case 11:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_LONDON);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_HONGKONG);
 			break;
 		case 12:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_MADRID);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_LONDON);
 			break;
 		case 13:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_MELBOURNE);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_LOSANGELES);
 			break;
 		case 14:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_MOSCOW);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_MADRID);
 			break;
 		case 15:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_NEWYORK);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_MELBOURNE);
 			break;
 		case 16:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_PARIS);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_MOSCOW);
 			break;
 		case 17:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_RIO);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_NEWYORK);
 			break;
 		case 18:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_ROME);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_PARIS);
 			break;
 		case 19:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SANFRANCISCO);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_RIO);
 			break;
 		case 20:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SEOUL);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_ROME);
 			break;
 		case 21:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SHANGHAI);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SANFRANCISCO);
 			break;
 		case 22:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SINGAPORE);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SEOUL);
 			break;
 		case 23:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SYDNEY);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SHANGHAI);
 			break;
 		case 24:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_TOKYO);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SINGAPORE);
 			break;
 		case 25:
-			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_WASHINGTONDC);
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_SYDNEY);
 			break;
 		case 26:
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_TOKYO);
+			break;
+		case 27:
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_TORONTO);
+			break;
+		case 28:
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_VANCOUVER);
+			break;
+		case 29:
+			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_WASHINGTONDC);
+			break;
+		case 30:
 			img_bt_connect = gbitmap_create_with_resource(RESOURCE_ID_WELLINGTON);
 			break;
 
 	
 /*
 
-chicago
+
 ottawa
 istanbul
 miami
-los angeles
-vancouver
 montreal
 mumbai
 cairo
@@ -334,15 +343,13 @@ void handle_bluetooth(bool connected) {
 		 layer_set_hidden(text_layer_get_layer(temp_layer4), true); 
 
 		layer_set_hidden(bitmap_layer_get_layer(icon_layer), true); 
-		
 
         bitmap_layer_set_bitmap(layer_conn_img, img_bt_disconnect);
 		vibes_long_pulse();
 
     } else {
 		
-				layer_set_hidden(bitmap_layer_get_layer(icon_layer), false); 
-
+		layer_set_hidden(bitmap_layer_get_layer(icon_layer), false); 
         bitmap_layer_set_bitmap(layer_conn_img, img_bt_connect);
     }
 }
@@ -424,19 +431,16 @@ void handle_init(void) {
   bitmap_layer_set_bitmap(layer_batt_img, img_battery_100);
   layer_add_child(window_layer, bitmap_layer_get_layer(layer_batt_img));
 #else
-	
   layer_batt_img  = bitmap_layer_create(GRect(0, 0, 144, 5));
   bitmap_layer_set_bitmap(layer_batt_img, img_battery_100);
   layer_add_child(window_layer, bitmap_layer_get_layer(layer_batt_img));	
 #endif
 	
 	
-	
 #ifdef PBL_PLATFORM_CHALK
   layer_conn_img  = bitmap_layer_create(GRect(0, 118, 180, 57));
 #else
   layer_conn_img  = bitmap_layer_create(GRect(0, 111, 144, 57));
-
 #endif
   bitmap_layer_set_bitmap(layer_conn_img, img_bt_connect);
   layer_add_child(window_layer, bitmap_layer_get_layer(layer_conn_img)); 
